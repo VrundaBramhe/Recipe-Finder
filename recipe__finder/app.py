@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template
 import requests
 
-api_key = "a0377c80b7ca4d57ae4d85675494f7eb"
+api_key = "API KEY"
 params ={"apiKey" : api_key,"instructionsRequired":True,"addRecipeInstructions" : True,"number":12}
 base_url = "https://api.spoonacular.com/recipes/complexSearch"
 
