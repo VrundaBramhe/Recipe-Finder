@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>searching page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: rgb(242, 242, 208);
+            min-width: 100vh;
+        }
+
+        /* LOGO */
+        .logo {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 10;
+        }
+
+        /* LOGO IMAGE */
+        .logo img {
+            width: 70px;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        /* CONTENT */
+        .row {
+            display: flex;
+            align-items: center;
+            gap: 20%;
+            width: 100%;
+            padding: 100px 50px 50px 80px;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+        }
+
+        .row .label {
+            width: 50%;
+            font-size: 30px;
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            width: 50%;
+        }
+
+        .search input[type="search"] {
+            padding: 8px 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            min-width: 60%;
+        }
+
+
+
+        .card {
+            display: flex;
+            flex-direction: row;
+            top: 10px;
+            width: 100%;
+            padding-left: 5%;
+            padding-right: 5%;
+            gap: 9%;
+
+        }
+
+        .card1 {
+            border: 10px solid rgba(196, 189, 12, 0.82);
+            height: 320px;
+            width: 250px;
+            border-radius: 10px;
+            background-color: rgb(234, 227, 34);
+            position: relative;
+        }
+
+        .card1 img {
+            width: 100%;
+            height: 250px;
+            padding-left: 0%;
+            border-radius: 50%;
+            position: absolute;
+            top: -50px;
+            right: -50px;
+        }
+
+        .card1 h2 {
+            top: 65%;
+            left: 25%;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+        }
+
+        .card h3 {
+            position: absolute;
+            top: 80%;
+            font-weight: 300;
+            padding-left: 5%;
+            padding-right: 5%;
+            font-size: smaller;
+        }
+
+        /* ======================================= */
+        /* --- MOBILE RESPONSIVENESS (@media) --- */
+        /* ======================================= */
+        @media (max-width: 768px) {
+            .row {
+                display: flex;
+                flex-direction: column-reverse;
+                align-items: center;
+                gap: 20%;
+                width: 100%;
+                padding-top: 10%;
+                padding-right: 28%;
+                font-size: clamp(2.5rem, 5vw, 4rem);
+            }
+
+
+            .card {
+                display: flex;
+                flex-direction: column;
+                top: 10px;
+                width: 50%;
+                padding-left: 5%;
+                padding-right: 5%;
+                gap: 10px 40px;
+            }
+
+            .card1 {
+                display: flex;
+                flex-wrap: nowrap;
+
+                gap: 100px 40px;
+                border: 2px solid rgb(205, 198, 7);
+                column-gap: 10%;
+                height: 320px;
+                width: 250px;
+                border-radius: 10px;
+                background-color: rgb(234, 227, 34);
+                position: relative;
+            }
+
+            .card1 img {
+                width: 100%;
+                height: 250px;
+                padding-left: 0%;
+                border-radius: 50%;
+                position: absolute;
+                top: -50px;
+                right: -50px;
+            }
+
+            .card1 h2 {
+                top: 65%;
+                left: 25%;
+                position: absolute;
+                display: flex;
+                justify-content: center;
+            }
+
+            .card h3 {
+                position: absolute;
+                top: 80%;
+                font-weight: 300;
+                padding-left: 5%;
+                padding-right: 5%;
+                font-size: smaller;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- LOGO -->
+    <div class="logo">
+        <img src="static/uploads/Yellow and Brown Kitchen Food Logo.png" alt="YumSeek Logo">
+    </div>
+
+    <!-- CONTENT -->
+    <div class="row">
+        <div class="label">
+            <h1>Search OR Select , What you crave?</h1>
+        </div>
+        <div class="search">
+
+            <form class="search" method="POST" action="/searching_page">
+                <input type="text" name="ingredient" placeholder="Search 🔎"  />
+                <button type="submit">Search</button>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- CARDS -->
+    <div class="card">
+        <a href="index3.html">
+            <div class="card1"><img src="https://i.pinimg.com/1200x/fc/7c/13/fc7c139fd1f579aabda530fa7bb42578.jpg"
+                    alt="">
+                <h2>ICE-CREAM</h2>
+                <h3>
+                    Ice cream is a sweet and creamy frozen dessert.
+                </h3>
+            </div>
+        </a>
+
+        <a href="index3.html">
+            <div class="card1"><img src="https://i.pinimg.com/736x/ea/1f/ce/ea1fcea7c0cc9e261a8112c078f7db74.jpg"
+                    alt="">
+                <h2>NOODLES</h2>
+                <h3>Noodles are long, thin strings of dough cooked in boiling water.</h3>
+            </div>
+        </a>
+
+        <a href="index3.html">
+            <div class="card1"><img src="https://i.pinimg.com/736x/db/11/81/db11815b009edb712aae50c5435b450e.jpg"
+                    alt="">
+                <h2>PANI-PURI</h2>
+                <h3>Panipuri is a famous Indian street food.</h3>
+            </div>
+        </a>
+
+        <a href="index3.html">
+            <div class="card1"><img src="https://i.pinimg.com/1200x/de/b3/98/deb398b12d26e68c7663b56cd11a06c1.jpg"
+                    alt="">
+                <h2>CAKE</h2>
+                <h3>Cake is a soft and sweet baked dessert. </h3>
+            </div>
+        </a>
+    </div>
+
+
+</body>
+
+</html>

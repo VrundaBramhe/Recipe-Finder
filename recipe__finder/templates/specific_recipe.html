@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ recipe_name }}</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Koh+Santepheap:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gurajada&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fenix&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #feaa1c;
+            min-height: 100vh;
+        }
+
+        .navbar
+		{
+			/* margin-top: 1rem; */
+			padding-top: 1rem;
+			display: flex;
+			width: 100vw;
+			/* background-color: black; */
+			justify-content: space-between;
+			align-items: center;
+			padding-left: 2rem;
+			padding-right: 2rem;
+
+		}
+		.search
+		{
+			display: flex;
+			height: 3rem;
+
+			width: 80%;
+			gap: 0.2rem;
+
+
+		}
+		.search input
+		{
+			width: 100%;
+			border-radius: 5px;
+			padding-left: 0.5rem;
+
+		}
+		.search button
+		{
+			border-radius: 5px;
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+		.logo{
+            /* position: absolute; */
+            display:flex;
+            top: 15px;
+            left: 15px;
+            /* z-index: 10; */
+        }
+		.logo img {
+            width: 70px;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        /* Container */
+        .container {
+            margin: 2em;
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            background-color: #FFF7DD;
+            gap: 2em;
+            padding: 3em;
+        }
+
+        .recipe_top {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2em;
+        }
+
+        .ingredients {
+            flex: 0 0 70%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 0 2rem;
+        }
+
+        .ingredients p {
+            margin-bottom: 0.5rem;
+        }
+
+        .dish_img {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dish_img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 1rem;
+        }
+
+        .recipe_bottom {
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+        }
+
+        .koh-santepheap-black {
+            font-family: 'Koh Santepheap', serif;
+            font-weight: 900;
+            font-size: 3rem;
+        }
+
+        .gurajada-regular {
+            font-family: 'Gurajada', sans-serif;
+            font-weight: 400;
+            font-size: 2rem;
+            text-decoration: underline;
+        }
+
+        ol {
+            list-style-type: decimal;
+            margin-left: 1.5rem;
+        }
+
+        .fenix-regular {
+            font-family: 'Fenix', serif;
+            font-weight: 400;
+            font-size: 1.3rem;
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 870px) {
+            .recipe_top {
+                flex-direction: column;
+            }
+            .dish_img img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+				<div class="logo">
+        			<img src="static/uploads/Yellow_and_Brown_Kitchen_Food_Logo.png" alt="YumSeek Logo">
+    			</div>
+
+				<div class="search">
+					<form class="search" method="POST" action="/searching_page">
+						<input type="text" name="ingredient" placeholder="Enter ingredients e.g. Potato "  />
+						<button type="submit">Search</button>
+					</form>
+				</div>
+
+        	</div>
+		</div>
+
+
+    <!-- Recipe Content -->
+    <div class="container">
+        <p id="dish_name" class="koh-santepheap-black">{{ recipe_name }}</p>
+        <div class="recipe_top">
+            <!-- Ingredients Section -->
+            <div class="ingredients">
+<!--                <p id="dish_name" class="koh-santepheap-black">{{ recipe_name }}</p>-->
+                <p class="gurajada-regular">Ingredients</p>
+                <ol class="fenix-regular">
+                    {% for ingredient in recipe_ingredients %}
+                        <li>{{ ingredient }}</li>
+                    {% endfor %}
+                </ol>
+            </div>
+
+            <!-- Dish Image -->
+            <div class="dish_img">
+                <img src="{{ dish_img }}" alt="{{ recipe_name }}">
+            </div>
+        </div>
+
+        <!-- Instructions Section -->
+        <div class="recipe_bottom">
+            <p class="gurajada-regular">Instructions</p>
+            <ol class="fenix-regular">
+                {% for step in recipe_steps %}
+                    <li>{{ step }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page 1</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background-color: rgb(242, 242, 208);
+        min-width: 100vh;
+      }
+
+      /* LOGO */
+      .logo {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        z-index: 10;
+      }
+
+      /* LOGO IMAGE */
+      .logo img {
+        width: 70px;
+        height: auto;
+        border-radius: 50%;
+      }
+
+      /* CONTAINER */
+      .container {
+        display: flex;
+        min-height: 100vh;
+        position: relative;
+      }
+
+      /* YELLOW-SECTION */
+      .yellow-section {
+        min-height: 100vh;
+        width: 40%;
+        position: relative;
+        background-color: rgb(234, 227, 34);
+      }
+
+      /* OPN-PIC */
+      .one-pic {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center it in the yellow section */
+        width: 90%;
+        height: auto;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      /* one-pic img */
+      .onepic img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /*Ensures image fills the container */
+      }
+
+      /* CONTENT - SECTION */
+      .content-section {
+        width: 60%;
+        padding: 100px 50px 50px 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+      }
+
+      .text h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .text h3 {
+        font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+        line-height: 1.6;
+        color: #555;
+        max-width: 650px;
+        margin-bottom: 30px;
+      }
+
+      .text h2 {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        color: #333;
+        margin-bottom: 15px;
+      }
+
+      .text button {
+        background-color: #f6ed36;
+        color: #100f0f;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 50px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .text button:hover {
+        background-color: #e0d035;
+      }
+
+      /* --- Chef Mascot Styling --- */
+      .pic4 {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 250px;
+        height: auto;
+      }
+
+      .pic4 img {
+        width: 100%;
+        height: auto;
+        border-top-left-radius: 45%;
+        border-top-right-radius: 45%;
+        background-color: #f8f0b5;
+      }
+
+      /* ======================================= */
+      /* --- MOBILE RESPONSIVENESS (@media) --- */
+      /* ======================================= */
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+        }
+
+        .yellow-section {
+          width: 100%;
+          min-height: 300px;
+        }
+
+        /* Make sure the single image is visible and centered on mobile */
+        .onepic {
+          display: block; /* Ensure it is visible */
+          position: relative; /* Change from absolute to relative to respect flow */
+          width: 90%;
+          height: 250px; /* Give it a fixed height on mobile for better control */
+          margin: 0 auto; /* Center it horizontally */
+          top: 25px; /* Add some space from the top of the yellow section */
+          left: unset;
+          transform: unset; /* Reset absolute positioning transforms */
+        }
+
+        /* Hide the original three circle styles (even if not in HTML) */
+        .pic1,
+        .pic2,
+        .pic3 {
+          display: none;
+        }
+
+        .content-section {
+          top: 200px;
+          width: 100%; /* Full width */
+          padding: 50px 20px; /* Reduced padding for mobile */
+          text-align: center; /* Center the text content */
+        }
+
+        .text h3 {
+          max-width: 100%;
+          font-size: 1rem;
+        }
+
+        /* Center button in content section */
+        .text a {
+          display: inline-block;
+          margin: 0 auto;
+        }
+
+        /* Adjust Chef Mascot for mobile */
+        .pic4 {
+          position: relative;
+          width: 150px;
+          margin: 30px auto 0;
+          left: unset;
+          right: unset;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- LOGO -->
+    <div class="logo">
+      <img
+        src="static/uploads/Yellow and Brown Kitchen Food Logo.png"
+        alt="YumSeek Logo"
+      />
+    </div>
+
+    <!-- CONTAINER -->
+    <div class="container">
+      <!-- YELLOW SECTION -->
+      <div class="yellow-section">
+        <!-- ONE PIC -->
+        <div class="one-pic">
+          <img
+            src="https://i.pinimg.com/736x/f6/a7/c6/f6a7c6b7c41fe55759e1493a97f68923.jpg"
+            alt="A collage of food dishes"
+          />
+        </div>
+      </div>
+
+      <!-- CONTENT-SECTION -->
+      <div class="content-section">
+        <!-- TEXT-Button -->
+        <div class="text">
+          <h1>Are You YumSeek?</h1>
+          <h3>
+            YumSeek makes cooking simple and exciting by helping users discover
+            recipes based on their cravings and available ingredients. With its
+            easy design, personalized suggestions, and wide variety of dishes,
+            YumSeek saves time, reduces food waste, and inspires creativity in
+            the kitchen—making every meal a delicious experience.
+          </h3>
+          <h2>Let’s End Craving !!!</h2>
+          <form action="searching_page" method="get">
+            <button type="submit">Direction</button>
+          </form>
+        </div>
+        <!-- CHEF -->
+        <div class="pic4">
+          <img
+            src="https://i.pinimg.com/1200x/6b/65/41/6b6541cf791ecf8680de60f51e44e95f.jpg"
+            alt="Chef Mascot"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

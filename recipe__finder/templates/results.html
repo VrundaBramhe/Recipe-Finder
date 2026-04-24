@@ -1,0 +1,312 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>recipes_list</title>-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">-->
+<!--    <style>-->
+<!--        * {-->
+<!--            margin: 0;-->
+<!--            padding: 0;-->
+<!--            box-sizing: border-box;-->
+<!--            font-family: 'Poppins', sans-serif;-->
+<!--        }-->
+
+<!--        body{-->
+<!--            background-color: rgb(242, 242, 208);-->
+<!--            min-width: 100vh;-->
+<!--            padding : 2em;-->
+<!--        }-->
+
+<!--        /* LOGO */-->
+<!--        .logo{-->
+<!--            position: absolute;-->
+<!--            display:flex;-->
+<!--            top: 15px;-->
+<!--            left: 15px;-->
+<!--            z-index: 10;-->
+<!--            height : 10px:-->
+<!--            with :10px;-->
+<!--        }-->
+<!--        .logo img {-->
+<!--            width: 70px;-->
+<!--            height: auto;-->
+<!--            border-radius: 50%;-->
+<!--        }-->
+<!--        .container-->
+<!--        {-->
+<!--            display : flex ;-->
+<!--            height:auto-->
+<!--            padding: 0.5em;-->
+<!--            flex-direction: column-->
+
+<!--        }-->
+
+
+
+
+
+
+
+<!--        .boxes {-->
+<!--          display: flex;-->
+<!--          padding: 1rem;-->
+<!--          background-color: white;-->
+<!--          gap: 2rem;-->
+<!--          height: 30%;-->
+<!--          width: 100%;      /* take full width of parent */-->
+<!--          /* max-width: 900px;  */-->
+<!--          margin: 0 auto;   /* center cards if max-width is used */-->
+<!--          border-radius: 10px;-->
+<!--          margin-bottom : 2rem;-->
+
+<!--        }-->
+
+<!--    </style>-->
+
+<!--</head>-->
+
+<!--<body>-->
+<!--    <div class="logo">-->
+<!--        <img src="/uploads/Yellow_and_Brown_Kitchen_Food_Logo.png" alt="YumSeek Logo">-->
+<!--    </div>-->
+
+<!--    <h1>Recipes with "{{ ingredient }}"</h1>-->
+
+<!--    <form class="search" method="POST" action="/searching_page">-->
+<!--                <input type="text" name="ingredient" placeholder="Search 🔎"  />-->
+<!--                <button type="submit">Search</button>-->
+<!--            </form>-->
+
+<!--    <div class="container">-->
+<!--        {% for recipe in recipes_list %}-->
+<!--                <div class="boxes">{{ recipe["title"] }}</div>-->
+<!--            {% endfor %}-->
+
+<!--    </div>-->
+
+
+
+
+
+
+
+
+
+
+<!--    <script src="script.js"></script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap" rel="stylesheet">
+		<style>
+
+		* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body{
+			display: flex;
+			flex-direction: column;
+            background-color: rgb(242, 242, 208);
+            min-width: 100vh;
+
+        }
+		.navbar
+		{
+			/* margin-top: 1rem; */
+			padding-top: 1rem;
+			display: flex;
+			width: 100vw;
+			/* background-color: black; */
+			justify-content: space-between;
+			align-items: center;
+			padding-left: 2rem;
+			padding-right: 2rem;
+
+		}
+
+
+		.search
+		{
+			display: flex;
+			height: 3rem;
+
+			width: 80%;
+			gap: 0.2rem;
+
+
+		}
+		.search input
+		{
+			width: 100%;
+			border-radius: 5px;
+			padding-left: 0.5rem;
+
+		}
+		.search button
+		{
+			border-radius: 5px;
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+		.logo{
+            /* position: absolute; */
+            display:flex;
+            top: 15px;
+            left: 15px;
+            /* z-index: 10; */
+        }
+		.logo img {
+            width: 70px;
+            height: auto;
+            border-radius: 50%;
+        }
+        .playpen-sans-k {
+font-family: "Playpen Sans", cursive;
+font-optical-sizing: auto;
+font-weight: bold;
+font-style: normal;
+font-size: 1.2rem;
+}
+
+
+			/* Container for all recipe boxes */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;  /* center boxes */
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 2rem;
+    height: auto;
+}
+
+/* Form itself styled like a box */
+.box-form {
+    display: block; /* Make form block-level so padding works */
+}
+
+/* Button inside the form acts as the clickable box */
+.box-button {
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    height: 23rem;
+    background-color: white;
+    border: none;
+    padding: 1rem;
+    gap: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+    justify-content: flex-start;
+}
+
+/* Hover effect */
+.box-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Image inside button */
+.box-button img {
+    width: 100%;
+    height: 60%;  /* Adjust as needed */
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+/* Recipe name text */
+.playpen-sans-k {
+    font-family: "Playpen Sans", cursive;
+    font-weight: bold;
+    font-style: normal;
+    font-optical-sizing: auto;
+    margin: 0;
+    text-align: center;
+    color: black;  /* always black */
+}
+
+/* Optional: make all text inside button black */
+.box-button * {
+    color: black !important;
+    text-decoration: none;
+}
+
+
+	</style>
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap" rel="stylesheet">
+</head>
+<body>
+		<div class="navbar">
+				<div class="logo">
+        			<img src="static/uploads/Yellow_and_Brown_Kitchen_Food_Logo.png" alt="YumSeek Logo">
+    			</div>
+
+				<div class="search">
+					<form class="search" method="POST" action="/searching_page">
+						<input type="text" name="ingredient" placeholder="Enter ingredients e.g. Potato "  />
+						<button type="submit">Search</button>
+					</form>
+				</div>
+
+        </div>
+		
+
+
+
+<!--	<div class="container">-->
+<!--    {% for recipe in recipes_list %}-->
+
+
+<!--			<img src="{{ recipe['image'] if recipe['image'] else 'backgrounds.jpeg' }}" alt="{{ recipe['title'] }}">-->
+<!--			<p class = "playpen-sans-k">{{  recipe["title"] }}</p>-->
+<!--		</a>-->
+<!--    {% endfor %}-->
+<!--	</div>-->
+
+		<div class="container">
+  {% for recipe in recipes_list  %}
+    <form action="{{ url_for('show_specific_recipe') }}" method="POST" class="box-form">
+      <input type="hidden" name="recipe_id" value="{{ recipe['id'] }}">
+      <input type="hidden" name="recipe_name" value="{{ recipe['title'] }}">
+      <input type="hidden" name="recipe_image" value="{{ recipe['image'] }}">
+      <button type="submit" class="box-button">
+        <img src="{{ recipe['image'] }}" alt="{{ recipe['name'] }}">
+        <p class="playpen-sans-k">{{ recipe['title'] }}</p>
+      </button>
+    </form>
+  {% endfor %}
+</div>
+
+
+</body>
+</html>
